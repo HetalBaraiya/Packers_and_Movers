@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>The Packers - New City</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>The Packers</strong> <span>Your moving partner!</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+<!-- Menu -->
+					<nav id="menu">
+					<ul class="links">
+						<li><a href="index.html">Home</a></li>
+						<li id="profileButton" style="display: none;"><a href="#" onclick="redirectToProfile()">Profile</a></li>
+						<script>
+						function redirectToProfile() {
+							var userId = localStorage.getItem('user_id');
+							if (userId) {
+							window.location.href = "profile.php?user_id=" + userId;
+							}
+						}
+						</script>
+						<li id="ordersButton" style="display: none;"><a href="service_orders.html">Service orders</a></li>
+						<li><a href="contact_us.html">Contact Us</a></li>
+						<li><a href="feedback.html">Feedback</a></li>
+						<li><a href="about_us.html">About Us</a></li>
+						<li id="logoutButton" style="display: none;"><a href="" onclick="onClickedLogout()">Logout</a></li>
+					</ul>
+					<ul class="actions stacked">
+						<li id="getStartedButton"><a href="get_started.html" class="button primary fit">Get Started</a></li>
+						<li id="loginButton"><a href="login.html" class="button fit">Log In</a></li>
+					</ul>						
+				</nav>
+					<script>
+						// Check if the "first_name" key exists in localStorage
+						const firstName = localStorage.getItem("first_name");
+
+						// Hide the buttons if the user is logged in
+						if (firstName) {
+							document.getElementById("getStartedButton").style.display = "none";
+							document.getElementById("loginButton").style.display = "none";
+							document.getElementById("logoutButton").style.display = "";
+							document.getElementById("profileButton").style.display = "";
+							document.getElementById("ordersButton").style.display = "";
+						} else {
+							document.getElementById("logoutButton").style.display = "none"; // Hide the "Logout" button
+							document.getElementById("profileButton").style.display = "none"; // Hide the "Logout" button
+							document.getElementById("ordersButton").style.display = "none"; // Hide the "Logout" button
+						}
+						function onClickedLogout() {
+							localStorage.clear();
+							window.location.href = "index.html";
+						}
+					</script>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>New City</h1>
+									</header>
+									<span class="image main"><img src="images/office_shifting4.jpg" alt="" /></span>
+									<p>At The Packers, we understand that office shifting to a new city involves a complex and challenging process. Our comprehensive office shifting service is designed to make your transition to a new city as smooth and efficient as possible. With our expertise and experience, we ensure that your business operations are minimally disrupted during the relocation.
+
+									<P>When it comes to office shifting in a new city, proper planning is crucial. Our dedicated team of professionals will work closely with you to develop a customized relocation plan tailored to your specific requirements. We take into consideration factors such as the size of your office, the nature of your business, and the specific challenges associated with the new city.
+										
+									<P>Packing is a critical aspect of office shifting, and our skilled packers specialize in handling office equipment, furniture, documents, and other items. We use high-quality packing materials and techniques to protect your assets during transit, ensuring their safe arrival at the new location. Our team is trained to handle delicate electronics, sensitive data, and other specialized equipment with the utmost care.
+										
+									<p>Transporting your office belongings to the new city requires careful coordination and logistics. With our extensive network and fleet of well-maintained vehicles, we guarantee timely and secure transportation. Our experienced drivers are well-versed in long-distance journeys and take the necessary precautions to safeguard your items throughout the trip.
+										
+									<p>Upon arrival in the new city, our team will efficiently unload and unpack your belongings, following your instructions for placement and arrangement. We understand the importance of minimizing downtime and ensuring a seamless transition for your business. Our professionals are skilled in furniture assembly, IT infrastructure setup, and other specialized services to get your office up and running as quickly as possible.
+										
+									<P>We also recognize that office shifting involves more than just physical relocation. Our team can assist you with various aspects such as obtaining necessary permits and licenses, connecting utilities, and adapting to the local regulations and business environment of the new city. We aim to provide comprehensive support to make your transition smoother and more convenient.
+										
+									<p>At The Packers, we prioritize communication and collaboration. Our project managers will work closely with you throughout the office shifting process, ensuring that all your concerns and requirements are addressed. We strive to deliver exceptional customer service, keeping you informed and updated at every stage of the relocation.
+										
+									<p>With The Packers, you can trust that your office shifting in a new city will be handled with professionalism, expertise, and care. We have a proven track record of successful office relocations and a commitment to delivering a seamless experience for our clients.
+										
+									<p>Contact The Packers today to discuss your office shifting needs in a new city. Let our experienced team take care of the logistics, allowing you to focus on your business and settling into the new city with ease.</p>
+								</div>
+							</section>
+							<div class="actions stacked">
+								<a href="delivery.html" class="button primary fit">Book a service now</a>
+							</div>
+					</div>
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="6"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Clear" /></li>
+									</ul>
+								</form>
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="#">information@untitled.tld</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-phone"></span>
+										<h3>Phone</h3>
+										<span>(000) 000-0000 x12387</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-home"></span>
+										<h3>Address</h3>
+										<span>1234 Somewhere Road #5432<br />
+										Nashville, TN 00000<br />
+										United States of America</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

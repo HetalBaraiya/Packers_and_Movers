@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>The Packers - New City</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>The Packers</strong> <span>Your moving partner!</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+<!-- Menu -->
+					<nav id="menu">
+					<ul class="links">
+						<li><a href="index.html">Home</a></li>
+						<li id="profileButton" style="display: none;"><a href="#" onclick="redirectToProfile()">Profile</a></li>
+						<script>
+						function redirectToProfile() {
+							var userId = localStorage.getItem('user_id');
+							if (userId) {
+							window.location.href = "profile.php?user_id=" + userId;
+							}
+						}
+						</script>
+						<li id="ordersButton" style="display: none;"><a href="service_orders.html">Service orders</a></li>
+						<li><a href="contact_us.html">Contact Us</a></li>
+						<li><a href="feedback.html">Feedback</a></li>
+						<li><a href="about_us.html">About Us</a></li>
+						<li id="logoutButton" style="display: none;"><a href="" onclick="onClickedLogout()">Logout</a></li>
+					</ul>
+					<ul class="actions stacked">
+						<li id="getStartedButton"><a href="get_started.html" class="button primary fit">Get Started</a></li>
+						<li id="loginButton"><a href="login.html" class="button fit">Log In</a></li>
+					</ul>						
+				</nav>
+					<script>
+						// Check if the "first_name" key exists in localStorage
+						const firstName = localStorage.getItem("first_name");
+
+						// Hide the buttons if the user is logged in
+						if (firstName) {
+							document.getElementById("getStartedButton").style.display = "none";
+							document.getElementById("loginButton").style.display = "none";
+							document.getElementById("logoutButton").style.display = "";
+							document.getElementById("profileButton").style.display = "";
+							document.getElementById("ordersButton").style.display = "";
+						} else {
+							document.getElementById("logoutButton").style.display = "none"; // Hide the "Logout" button
+							document.getElementById("profileButton").style.display = "none"; // Hide the "Logout" button
+							document.getElementById("ordersButton").style.display = "none"; // Hide the "Logout" button
+						}
+						function onClickedLogout() {
+							localStorage.clear();
+							window.location.href = "index.html";
+						}
+					</script>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Around Neighbourhood</h1>
+									</header>
+									<span class="image main"><img src="images/home.jpg" alt="" /></span>
+									<p>At The Packers, we understand that moving to a new home within the neighborhood can be both an exciting and challenging experience. That's why we offer comprehensive and reliable home relocation services to ensure a smooth and stress-free transition for you and your family.</p>
+									<p>With years of experience in the industry, our team of dedicated professionals is committed to providing top-notch moving solutions tailored to your specific needs. Whether you're moving a few blocks away or across the neighborhood, we have the expertise, equipment, and resources to handle your relocation efficiently and effectively.</p>
+									<p>Our home relocation process starts with a thorough assessment of your requirements. We will work closely with you to understand your moving needs, including the size of your household, any fragile or valuable items, and any special requests you may have. This allows us to develop a customized relocation plan that suits your timeline and budget.</p>								
+									<p>When it comes to packing, we take the utmost care to ensure the safe transportation of your belongings. Our skilled packers are trained in efficient packing techniques and use high-quality packing materials to protect your items during transit. From delicate glassware to bulky furniture, we handle each item with precision and attention to detail, ensuring they are properly wrapped, labeled, and secured.</p>									
+									<p>Our experienced movers are well-versed in the art of loading and unloading. They utilize advanced equipment and techniques to safely load your belongings onto our well-maintained trucks. With a keen eye for organization, they ensure that your items are carefully stacked and secured, minimizing any potential shifting during transportation.	</p>			
+									<P>When it comes to transportation, we have a fleet of clean and spacious vehicles equipped with safety features to transport your possessions with the utmost care. Our drivers are skilled professionals who are familiar with the local neighborhoods, ensuring a smooth and timely delivery to your new address. Throughout the journey, we maintain regular communication with you, providing updates on the progress of your move.</p>										
+									<P>Upon arrival at your new home, our dedicated team will unload and unpack your belongings with precision and efficiency. We carefully place each item in the designated rooms, following your instructions and taking extra care with fragile or valuable possessions. Our goal is to create a comfortable and organized living space, allowing you to settle in quickly and easily.</P>								
+									<P>In addition to our core services, we offer a range of value-added options to further enhance your moving experience. These include furniture disassembly and reassembly, appliance installation, and specialty item handling. We can also provide short-term storage solutions if needed, ensuring the safety of your belongings during the relocation process.</P>				
+									<P>As a customer-centric company, we prioritize your satisfaction above all else. Our friendly and professional staff is available to address any concerns or questions you may have throughout the entire moving process. We believe in open and transparent communication, providing you with peace of mind every step of the way.</P>
+									<P>At The Packers, we pride ourselves on delivering exceptional service at competitive prices. Our commitment to excellence, attention to detail, and customer-focused approach set us apart in the industry. Trust us with your home relocation around the neighborhood, and we will strive to exceed your expectations, making your move a seamless and positive experience.</p>
+								</div>
+							</section>
+							<div class="actions stacked">
+								<a href="delivery.html" class="button primary fit">Book a service now</a>
+							</div>
+					</div>
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="6"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Clear" /></li>
+									</ul>
+								</form>
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="#">het@untitled.tld</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-phone"></span>
+										<h3>Phone</h3>
+										<span>(000) 000-0000 x12387</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-home"></span>
+										<h3>Address</h3>
+										<span>1234 Somewhere Road #5432<br />
+										xyz, TN 00000<br />
+										India</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

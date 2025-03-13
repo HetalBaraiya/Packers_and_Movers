@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The packers - Hire us</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+      background-color: #7c9884;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+
+		.header {
+			background-image: url('images/delivery_banner.jpg');
+			background-size: cover;
+			height: 200px;
+		}
+
+		.header h1 {
+			color: #fff;
+			font-size: 36px;
+			padding-top: 50px;
+			text-align: center;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		form label {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		form input[type="text"],
+		form input[type="email"],
+		form input[type="tel"],
+		form select,
+		form textarea {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 20px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+			font-size: 16px;
+		}
+
+		form textarea {
+			resize: vertical;
+			min-height: 100px;
+		}
+
+		form select {
+			width: 100%;
+		}
+
+		form input[type="button"] {
+			background-color: #010101;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+			padding: 10px;
+			width: 100%;
+		}
+
+		form input[type="button"]:hover {
+			background-color: #3e8e41;
+		}
+
+    .error-message {
+      color: rgb(147, 0, 0);
+      font-size: 14px;
+    }
+
+    .payment-amount {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+	</style>
+</head>
+<body>
+
+	<div class="header">
+		<h1>Fill information</h1>
+	</div>
+
+	<div class="container">
+		<form>
+			<label for="first_name">First Name:</label>
+			<input type="text" id="first_name" name="first_name" required>
+
+			<label for="last_name">Last Name:</label>
+			<input type="text" id="last_name" name="last_name" required>
+
+			<label for="address">Address:</label>
+			<textarea id="address" name="address" required></textarea>
+
+			<label for="phone">Phone Number:</label>
+			<input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" maxlength="10">
+
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required maxlength="100">
+
+			<label for="select_service">Select Service:</label>
+			<select id="select_service" name="select_service" onchange="changeTypeOptions()" required>
+				<option value="">--Select--</option>
+        <option value="home_relocation">Home Relocation</option>
+        <option value="packing_unpacking">Packing & Unpacking</option>
+		<option value="office_shifting">Office Shifting</option>
+		<option value="vehicle_shifting">Vehicle Shifting</option>
+		<option value="warehousing">Warehousing</option>
+		<option value="loading_unloading">Loading & Unloading</option>
+		</select>
+		<label for="select_type">Select Type of Service:</label>
+		<select id="select_type" name="select_type" required>
+		<option value="">--Select--</option>
+		</select>
+		<input type="button" value="Place Order" onclick="navigateToPaymentPage()" id="place_order_button" disabled>
+		<p class="error-message" id="error_message"></p>
+		  </form>
+	  
+	  <div class="payment-amount">
+		Payment Amount: 30,000/- Rupees
+	  </div>
+	  </div>
+	  
+	  <script>
+	  function navigateToPaymentPage() {
+		window.location.href = "payment.html";
+	  }
+	  
+	  function validateForm() {
+		const firstNameInput = document.getElementById("first_name");
+		const lastNameInput = document.getElementById("last_name");
+		const addressInput = document.getElementById("address");
+		const phoneInput = document.getElementById("phone");
+		const emailInput = document.getElementById("email");
+		const selectServiceInput = document.getElementById("select_service");
+		const selectTypeInput = document.getElementById("select_type");
+		const placeOrderButton = document.getElementById("place_order_button");
+		const errorMessage = document.getElementById("error_message");
+	  
+		if (
+		  firstNameInput.value.trim() === "" ||
+		  lastNameInput.value.trim() === "" ||
+		  addressInput.value.trim() === "" ||
+		  phoneInput.value.trim() === "" ||
+		  emailInput.value.trim() === "" ||
+		  selectServiceInput.value === "" ||
+		  selectTypeInput.value === ""
+		) {
+		  placeOrderButton.disabled = true;
+		  errorMessage.textContent = "All fields are required.";
+		} else if (emailInput.validity.patternMismatch) {
+		  placeOrderButton.disabled = true;
+		  errorMessage.textContent = "Please enter a valid email address.";
+		} else if (emailInput.value.length > 100) {
+		  placeOrderButton.disabled = true;
+		  errorMessage.textContent = "Email address should not exceed 100 characters.";
+		} else if (phoneInput.value.length !== 10 || isNaN(phoneInput.value)) {
+		  placeOrderButton.disabled = true;
+		  errorMessage.textContent = "Please enter a valid phone number with 10 digits.";
+		} else {
+		  placeOrderButton.disabled = false;
+		  errorMessage.textContent = "";
+		}
+	  }
+	  
+	  function changeTypeOptions() {
+		  var selectService = document.getElementById("select_service");
+		  var selectType = document.getElementById("select_type");
+	  
+		  selectType.innerHTML = "";
+	  
+		  if (selectService.value === "home_relocation") {
+			  var d1t1Option = document.createElement("option");
+			  d1t1Option.text = "Around Neighbourhood";
+			  selectType.add(d1t1Option);
+	  
+			  var d1t2Option = document.createElement("option");
+			  d1t2Option.text = "New City";
+			  selectType.add(d1t2Option);
+		  } else if (selectService.value === "packing_unpacking") {
+			  var d2t1Option = document.createElement("option");
+			  d2t1Option.text = "Hazardous";
+			  selectType.add(d2t1Option);
+	  
+			  var d2t2Option = document.createElement("option");
+			  d2t2Option.text = "Fragile";
+			  selectType.add(d2t2Option);
+	  
+			  var d2t3Option = document.createElement("option");
+			  d2t3Option.text = "Others";
+			  selectType.add(d2t3Option);
+} else if (selectService.value === "office_shifting") {
+var d3t1Option = document.createElement("option");
+d3t1Option.text = "Around Neighbourhood";
+selectType.add(d3t1Option);
+var d3t2Option = document.createElement("option");
+		d3t2Option.text = "New City";
+		selectType.add(d3t2Option);
+
+		var d3t3Option = document.createElement("option");
+		d3t3Option.text = "Luxurious";
+		selectType.add(d3t3Option);
+	} else if (selectService.value === "vehicle_shifting") {
+		var d4t1Option = document.createElement("option");
+		d4t1Option.text = "Two Wheeler";
+		selectType.add(d4t1Option);
+
+		var d4t2Option = document.createElement("option");
+		d4t2Option.text = "Four Wheeler";
+		selectType.add(d4t2Option);
+
+		var d4t3Option = document.createElement("option");
+		d4t3Option.text = "Others";
+		selectType.add(d4t3Option);
+	} else if (selectService.value === "warehousing") {
+		var d5t1Option = document.createElement("option");
+		d5t1Option.text = "Warehouse Services";
+		selectType.add(d5t1Option);
+
+		var d5t2Option = document.createElement("option");
+		d5t2Option.text = "Inventory Management";
+		selectType.add(d5t2Option);
+	} else if (selectService.value === "loading_unloading") {
+		var d6t1Option = document.createElement("option");
+		d6t1Option.text = "Household Goods";
+		selectType.add(d6t1Option);
+
+		var d6t2Option = document.createElement("option");
+		d6t2Option.text = "Heavy Items & Machinery";
+		selectType.add(d6t2Option);
+
+		var d6t3Option = document.createElement("option");
+		d6t3Option.text = "Others";
+		selectType.add(d6t3Option);
+	}
+
+  validateForm();
+}
+
+// Add event listeners to validate the form on input change
+document.getElementById("first_name").addEventListener("input", validateForm);
+document.getElementById("last_name").addEventListener("input", validateForm);
+document.getElementById("address").addEventListener("input", validateForm);
+document.getElementById("phone").addEventListener("input", validateForm);
+document.getElementById("email").addEventListener("input", validateForm);
+document.getElementById("select_service").addEventListener("change", validateForm);
+document.getElementById("select_type").addEventListener("change", validateForm);
+</script>
+</body>
+</html>

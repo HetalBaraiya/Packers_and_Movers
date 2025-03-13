@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>The Packers - New City</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>The Packers</strong> <span>Your moving partner!</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+<!-- Menu -->
+					<nav id="menu">
+					<ul class="links">
+						<li><a href="index.html">Home</a></li>
+						<li id="profileButton" style="display: none;"><a href="#" onclick="redirectToProfile()">Profile</a></li>
+						<script>
+						function redirectToProfile() {
+							var userId = localStorage.getItem('user_id');
+							if (userId) {
+							window.location.href = "profile.php?user_id=" + userId;
+							}
+						}
+						</script>
+						<li id="ordersButton" style="display: none;"><a href="service_orders.html">Service orders</a></li>
+						<li><a href="contact_us.html">Contact Us</a></li>
+						<li><a href="feedback.html">Feedback</a></li>
+						<li><a href="about_us.html">About Us</a></li>
+						<li id="logoutButton" style="display: none;"><a href="" onclick="onClickedLogout()">Logout</a></li>
+					</ul>
+					<ul class="actions stacked">
+						<li id="getStartedButton"><a href="get_started.html" class="button primary fit">Get Started</a></li>
+						<li id="loginButton"><a href="login.html" class="button fit">Log In</a></li>
+					</ul>						
+				</nav>
+					<script>
+						// Check if the "first_name" key exists in localStorage
+						const firstName = localStorage.getItem("first_name");
+
+						// Hide the buttons if the user is logged in
+						if (firstName) {
+							document.getElementById("getStartedButton").style.display = "none";
+							document.getElementById("loginButton").style.display = "none";
+							document.getElementById("logoutButton").style.display = "";
+							document.getElementById("profileButton").style.display = "";
+							document.getElementById("ordersButton").style.display = "";
+						} else {
+							document.getElementById("logoutButton").style.display = "none"; // Hide the "Logout" button
+							document.getElementById("profileButton").style.display = "none"; // Hide the "Logout" button
+							document.getElementById("ordersButton").style.display = "none"; // Hide the "Logout" button
+						}
+						function onClickedLogout() {
+							localStorage.clear();
+							window.location.href = "index.html";
+						}
+					</script>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Luxurious</h1>
+									</header>
+									<span class="image main"><img src="images/office_shifting7.jpg" alt="" /></span>
+									<p>At The Packers, we specialize in providing exceptional office shifting services in luxurious settings. We understand that upscale establishments require a meticulous approach and personalized attention to detail during the shifting process. With our expertise in handling high-end relocations, we ensure a seamless and luxurious experience for our clients.
+
+									<p>When it comes to office shifting in a luxurious setting, we go above and beyond to exceed your expectations. Our team of professionals is highly trained and experienced in handling the unique requirements of luxurious offices. We understand the importance of maintaining the elegance, sophistication, and high standards associated with your establishment.
+										
+									<p>From the initial consultation to the final execution, we work closely with you to develop a customized relocation plan that caters to your specific needs. We take into consideration the layout of your office, the nature of your luxurious items, and any special requests you may have. Our goal is to provide a seamless transition while preserving the aesthetics and ambiance of your luxurious space.
+										
+									<p>Packing is a crucial aspect of office shifting, especially when it comes to luxurious items. Our skilled packers are experts in handling delicate and valuable items commonly found in upscale offices. We use premium packing materials and techniques to ensure the utmost protection for your high-end furniture, artwork, electronics, and other luxury belongings. Every item is carefully wrapped, secured, and labeled to guarantee their safe transportation.
+										
+									<p>Transportation is carried out with the highest level of care and security. We have a fleet of well-maintained vehicles specially equipped to handle luxurious relocations. Our experienced drivers follow optimized routes and employ advanced tracking systems to ensure the safety and timely delivery of your valuable belongings. We take every precaution to protect your luxurious office items throughout the journey.
+										
+									<p>Upon arrival at the new location, our professional team will handle the unloading and unpacking process with utmost care and precision. We understand the importance of maintaining the luxurious aesthetic and layout of your office, and we will meticulously arrange every item according to your specifications. Our goal is to recreate the elegance and sophistication of your previous space, ensuring a seamless transition and minimal disruption to your operations.
+										
+									<p>In addition to physical logistics, we offer personalized services to cater to your specific requirements. Whether you need assistance with furniture assembly, IT infrastructure setup, or other specialized services, our dedicated team is here to help. We work closely with you to understand your unique needs and provide tailored solutions that meet your expectations.
+										
+									<p>At The Packers, we prioritize discretion, professionalism, and exceptional customer service. We understand the confidential and sensitive nature of luxurious office relocations, and we handle every aspect with the utmost confidentiality and respect for your privacy.
+										
+									<p>With The Packers, you can trust that your office shifting in a luxurious setting will be handled with meticulous attention to detail, professionalism, and care. Our dedicated team is committed to delivering a seamless and luxurious experience, ensuring that your high-end office belongings are transported and arranged with the utmost precision and sophistication.
+										
+									<p>Contact The Packers today to discuss your office shifting needs in a luxurious setting. Let our experienced team of professionals take care of the logistics while you enjoy a stress-free and opulent office relocation experience.</p>
+								</div>
+							</section>
+							<div class="actions stacked">
+								<a href="delivery.html" class="button primary fit">Book a service now</a>
+							</div>
+					</div>
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="6"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Clear" /></li>
+									</ul>
+								</form>
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="#">information@untitled.tld</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-phone"></span>
+										<h3>Phone</h3>
+										<span>(000) 000-0000 x12387</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-home"></span>
+										<h3>Address</h3>
+										<span>1234 Somewhere Road #5432<br />
+										Nashville, TN 00000<br />
+										United States of America</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

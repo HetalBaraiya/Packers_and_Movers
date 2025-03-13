@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>The Packers - Warehousing Services</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+				<header id="header" class="alt style2">
+					<a href="index.html" class="logo"><strong>The Packers</strong> <span>Your Moving Partner!</span></a>
+					<div class="actions stacked">
+						<a href="delivery.html" class="button primary fit">Hire Us</a>
+					</div>
+					<nav>
+						<a href="#menu">Menu</a>
+					</nav>
+				</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<ul class="links">
+						<li><a href="index.html">Home</a></li>
+						<li id="profileButton" style="display: none;"><a href="#" onclick="redirectToProfile()">Profile</a></li>
+						<script>
+						function redirectToProfile() {
+							var userId = localStorage.getItem('user_id');
+							if (userId) {
+							window.location.href = "profile.php?user_id=" + userId;
+							}
+						}
+						</script>
+						<li id="ordersButton" style="display: none;"><a href="service_orders.html">Service orders</a></li>
+						<li><a href="contact_us.html">Contact Us</a></li>
+						<li><a href="feedback.html">Feedback</a></li>
+						<li><a href="about_us.html">About Us</a></li>
+						<li id="logoutButton" style="display: none;"><a href="" onclick="onClickedLogout()">Logout</a></li>
+					</ul>
+					<ul class="actions stacked">
+						<li id="getStartedButton"><a href="get_started.html" class="button primary fit">Get Started</a></li>
+						<li id="loginButton"><a href="login.html" class="button fit">Log In</a></li>
+					</ul>						
+				</nav>
+					<script>
+						// Check if the "first_name" key exists in localStorage
+						const firstName = localStorage.getItem("first_name");
+
+						// Hide the buttons if the user is logged in
+						if (firstName) {
+							document.getElementById("getStartedButton").style.display = "none";
+							document.getElementById("loginButton").style.display = "none";
+							document.getElementById("logoutButton").style.display = "";
+							document.getElementById("profileButton").style.display = "";
+							document.getElementById("ordersButton").style.display = "";
+						} else {
+							document.getElementById("logoutButton").style.display = "none"; // Hide the "Logout" button
+							document.getElementById("profileButton").style.display = "none"; // Hide the "Logout" button
+							document.getElementById("ordersButton").style.display = "none"; // Hide the "Logout" button
+						}
+						function onClickedLogout() {
+							localStorage.clear();
+							window.location.href = "index.html";
+						}
+					</script>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+				<section id="banner" class="style2">
+					<div class="inner">
+						<span class="image">
+							<img src="images/warehousing4.jpg" alt="" />
+						</span>
+						<header class="major">
+							<h1>Our Services</h1>
+						</header>
+						<div class="content">
+							<p>The Packers offer secure and reliable warehousing services for individuals, families, and businesses in need of a place to store their belongings. Our state-of-the-art warehouses are equipped with the latest security systems and climate control technology to ensure that your items are protected from theft, damage, and the elements.</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+						<section id="one">
+							<div class="inner">
+								<header class="major">
+									<h2>Warehouse Services</h2>
+								</header>
+								<p>At The Packers, we offer reliable and efficient warehousing services to meet your storage needs. Our warehousing facilities are equipped with state-of-the-art infrastructure and advanced security systems to ensure the safety and security of your goods. Whether you require short-term or long-term storage, we have spacious and well-maintained warehouses that can accommodate a wide range of products. Our experienced warehouse staff follows strict inventory management protocols, providing you with accurate tracking and retrieval of your goods. Additionally, we offer value-added services such as inventory management, order fulfillment, and distribution to enhance the efficiency of your warehousing experience. Trust The Packers for secure and reliable storage solutions for your business. Contact us today to discuss your warehousing requirements.</p>
+							</div>
+						</section>
+
+						<!-- Two -->
+							<section id="two" class="spotlights">
+								<section>
+									<a href="flexible_storage.html" class="image">
+										<img src="images/warehousing3.jpg" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Flexible Storage</h3>
+											</header>
+											<p>At The Packers, we understand that every storage need is unique. That's why we offer flexible storage solutions to fit your specific requirements. Whether you need short-term storage while you're moving, or long-term storage for your business, we'll work with you to create a customized plan that fits your schedule, budget, and needs. We provide a range of storage options, including personal storage for household items, commercial storage for inventory and equipment, and document storage for important files and records. Our warehouses are equipped with pallet racking, shelving, and other storage systems to optimize the use of space and make it easy for you to access your items whenever you need them.</p>
+											<ul class="actions">
+												<li><a href="flexible_storage.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+									</div>
+								</section>
+								<section>
+									<a href="inventory_management.html" class="image">
+										<img src="images/packing.jpg" alt="" data-position="top center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Inventory Management</h3>
+											</header>
+											<p>At The Packers, we provide warehousing services with a strong focus on inventory management. We understand the importance of accurate and efficient inventory tracking for businesses. Our warehousing facilities are equipped with advanced inventory management systems to help you streamline your supply chain operations. We offer spacious and well-organized warehouses that can accommodate various types of inventory. Our experienced warehouse staff follows strict protocols to ensure accurate recording, tracking, and organization of your inventory. With our inventory management service, you can gain better visibility and control over your stock levels, leading to improved efficiency and reduced costs. Trust The Packers for reliable warehousing and inventory management solutions. Contact us today to discuss your inventory management needs and let us help you optimize your supply chain operations.</p>
+											<ul class="actions">
+												<li><a href="inventory_management.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+									</div>
+								</section>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="6"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Clear" /></li>
+									</ul>
+								</form>
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="#">information@untitled.tld</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-phone"></span>
+										<h3>Phone</h3>
+										<span>(000) 000-0000 x12387</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-home"></span>
+										<h3>Address</h3>
+										<span>1234 Somewhere Road #5432<br />
+										Nashville, TN 00000<br />
+										United States of America</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

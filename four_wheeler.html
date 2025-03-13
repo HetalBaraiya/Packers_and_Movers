@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Around Neighbourhood</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>The Packers</strong> <span>Your moving partner!</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+<!-- Menu -->
+					<nav id="menu">
+					<ul class="links">
+						<li><a href="index.html">Home</a></li>
+						<li id="profileButton" style="display: none;"><a href="#" onclick="redirectToProfile()">Profile</a></li>
+						<script>
+						function redirectToProfile() {
+							var userId = localStorage.getItem('user_id');
+							if (userId) {
+							window.location.href = "profile.php?user_id=" + userId;
+							}
+						}
+						</script>
+						<li id="ordersButton" style="display: none;"><a href="service_orders.html">Service orders</a></li>
+						<li><a href="contact_us.html">Contact Us</a></li>
+						<li><a href="feedback.html">Feedback</a></li>
+						<li><a href="about_us.html">About Us</a></li>
+						<li id="logoutButton" style="display: none;"><a href="" onclick="onClickedLogout()">Logout</a></li>
+					</ul>
+					<ul class="actions stacked">
+						<li id="getStartedButton"><a href="get_started.html" class="button primary fit">Get Started</a></li>
+						<li id="loginButton"><a href="login.html" class="button fit">Log In</a></li>
+					</ul>						
+				</nav>
+					<script>
+						// Check if the "first_name" key exists in localStorage
+						const firstName = localStorage.getItem("first_name");
+
+						// Hide the buttons if the user is logged in
+						if (firstName) {
+							document.getElementById("getStartedButton").style.display = "none";
+							document.getElementById("loginButton").style.display = "none";
+							document.getElementById("logoutButton").style.display = "";
+							document.getElementById("profileButton").style.display = "";
+							document.getElementById("ordersButton").style.display = "";
+						} else {
+							document.getElementById("logoutButton").style.display = "none"; // Hide the "Logout" button
+							document.getElementById("profileButton").style.display = "none"; // Hide the "Logout" button
+							document.getElementById("ordersButton").style.display = "none"; // Hide the "Logout" button
+						}
+						function onClickedLogout() {
+							localStorage.clear();
+							window.location.href = "index.html";
+						}
+					</script>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Four Wheeler</h1>
+									</header>
+									<span class="image main"><img src="images/car_others.jpg" alt="" /></span>
+									<p>At The Packers, we specialize in providing reliable and efficient vehicle shifting services for four-wheelers. Whether you need to transport your car, SUV, van, or any other type of four-wheeler, we have the expertise and experience to handle the process with utmost care and professionalism.
+
+									<p>When it comes to vehicle shifting for four-wheelers, we understand the significance of your vehicle as a valuable asset. Our team of trained professionals takes every precaution to ensure the safety and security of your four-wheeler throughout the entire relocation process.
+										
+									<p>We begin by carefully assessing the requirements of your vehicle and tailoring our approach accordingly. Our experts develop a customized plan to ensure the smooth and seamless transportation of your four-wheeler. We employ specialized equipment, such as hydraulic lifts and dollies, to handle the loading and unloading process with precision.
+										
+									<p>Packing is a crucial aspect of vehicle shifting, and we pay meticulous attention to detail. Our skilled packers use high-quality packing materials to protect your four-wheeler from scratches, dents, and other potential damages. We ensure that your vehicle is securely packed and ready for transportation to its new destination.
+										
+									<p>Transportation is carried out by our experienced drivers who have a deep understanding of vehicle transportation logistics. We have a fleet of well-maintained carriers and trailers specifically designed for transporting four-wheelers. Our drivers strictly adhere to safety protocols and follow optimized routes to ensure the secure and timely delivery of your vehicle.
+										
+									<p>Throughout the transportation process, we maintain constant communication with our clients, providing updates on the progress of their vehicle's relocation. We prioritize transparency and clear communication to ensure that our clients are informed and reassured throughout the entire journey.
+										
+									<p>Upon arrival at the destination, our team of professionals will carefully unload your four-wheeler, ensuring that it is handled with the utmost care and precision. We understand the value of your vehicle and take extra precautions to prevent any damage during the unloading process. Our team members are trained to handle different types of four-wheelers, ensuring a seamless and safe transition.
+										
+									<p>With The Packers, you can trust that your four-wheeler will be in safe hands. We prioritize customer satisfaction and go the extra mile to ensure a hassle-free and reliable vehicle shifting experience. Our dedicated team of professionals strives to exceed your expectations, delivering exceptional service and attention to detail.
+										
+									<p>In addition to vehicle shifting, we also offer additional services to cater to your specific needs. Whether you require vehicle insurance, temporary storage facilities, or assistance with documentation, our comprehensive range of services has got you covered.
+										
+									<p>Contact The Packers today to discuss your vehicle shifting needs for four-wheelers. Let our experienced team handle the logistics while you enjoy peace of mind, knowing that your valuable four-wheeler will be transported with the utmost care and professionalism to its new destination.</p>
+								</div>
+							</section>
+							<div class="actions stacked">
+								<a href="delivery.html" class="button primary fit">Book a service now</a>
+							</div>
+					</div>
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="6"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Clear" /></li>
+									</ul>
+								</form>
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="#">information@untitled.tld</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-phone"></span>
+										<h3>Phone</h3>
+										<span>(000) 000-0000 x12387</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-home"></span>
+										<h3>Address</h3>
+										<span>1234 Somewhere Road #5432<br />
+										Nashville, TN 00000<br />
+										United States of America</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>The Packers - packing-Unpacking Service</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="index.html" class="logo"><strong>The Packers</strong> <span>Your Moving Partner!</span></a>
+						<div class="actions stacked">
+							<a href="delivery.html" class="button primary fit">Hire Us</a>
+						</div>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+<!-- Menu -->
+					<nav id="menu">
+					<ul class="links">
+						<li><a href="index.html">Home</a></li>
+						<li id="profileButton" style="display: none;"><a href="#" onclick="redirectToProfile()">Profile</a></li>
+						<script>
+						function redirectToProfile() {
+							var userId = localStorage.getItem('user_id');
+							if (userId) {
+							window.location.href = "profile.php?user_id=" + userId;
+							}
+						}
+						</script>
+						<li id="ordersButton" style="display: none;"><a href="service_orders.html">Service orders</a></li>
+						<li><a href="contact_us.html">Contact Us</a></li>
+						<li><a href="feedback.html">Feedback</a></li>
+						<li><a href="about_us.html">About Us</a></li>
+						<li id="logoutButton" style="display: none;"><a href="" onclick="onClickedLogout()">Logout</a></li>
+					</ul>
+					<ul class="actions stacked">
+						<li id="getStartedButton"><a href="get_started.html" class="button primary fit">Get Started</a></li>
+						<li id="loginButton"><a href="login.html" class="button fit">Log In</a></li>
+					</ul>						
+				</nav>
+					<script>
+						// Check if the "first_name" key exists in localStorage
+						const firstName = localStorage.getItem("first_name");
+
+						// Hide the buttons if the user is logged in
+						if (firstName) {
+							document.getElementById("getStartedButton").style.display = "none";
+							document.getElementById("loginButton").style.display = "none";
+							document.getElementById("logoutButton").style.display = "";
+							document.getElementById("profileButton").style.display = "";
+							document.getElementById("ordersButton").style.display = "";
+						} else {
+							document.getElementById("logoutButton").style.display = "none"; // Hide the "Logout" button
+							document.getElementById("profileButton").style.display = "none"; // Hide the "Logout" button
+							document.getElementById("ordersButton").style.display = "none"; // Hide the "Logout" button
+						}
+						function onClickedLogout() {
+							localStorage.clear();
+							window.location.href = "index.html";
+						}
+					</script>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="images/packing.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h1>Our Services</h1>
+							</header>
+							<div class="content">
+								<p>The Packers work for and provide services to individuals, families, big organizations, and businesses. We offer end-to-end packing and shifting services</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h2>Packing-Unpacking</h2>
+									</header>
+									<p>Welcome to The Packers, your trusted partner for packing and unpacking services! We understand that packing and unpacking your belongings can be a time-consuming and stressful task. That's why we're here to provide you with comprehensive packing and unpacking services that are tailored to your specific needs.
+
+										Our team of experienced and professional packers and movers are trained to handle all aspects of packing and unpacking, from carefully packing your items to unpacking them at your destination. We provide a range of services to make your move as smooth and stress-free as possible, including packing and unpacking, loading and unloading, transportation, and even storage solutions if needed.
+										
+										At The Packers, we prioritize the safety and security of your belongings. That's why we use only the highest quality packing materials and equipment to ensure that your items are protected during transport. Our team is also trained to handle delicate and fragile items with care, such as antiques, artwork, and electronics.
+										
+										We understand that every move is unique, which is why we provide personalized services to meet your specific needs. Whether you need help packing your entire home or office, or just need assistance with a few items, we'll work with you to create a customized plan that fits your schedule, budget, and requirements.
+										
+										At The Packers, we believe that moving should be a stress-free experience. Let us take care of the packing and unpacking so that you can focus on settling into your new space. Contact us today to learn more about our packing and unpacking services and how we can help with your move!</p>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="spotlights">
+								<section>
+									<a href="hazardous.html" class="image">
+										<img src="images/hazardous.jpg" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Hazardous</h3>
+											</header>
+											<p>Safety is our top priority at The Packers, and we understand the unique challenges associated with packing and unpacking hazardous items. Our specialized team is trained to handle hazardous materials with utmost care and compliance with safety regulations. Whether it's flammable liquids, corrosive substances, or other dangerous goods, we have the expertise to properly pack and transport them to ensure the safety of everyone involved. Trust The Packers to handle your hazardous items with precision and professionalism, providing you with peace of mind throughout the entire process.</p>
+											<ul class="actions">
+												<li><a href="hazardous.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+									</div>
+								</section>
+								<section>
+									<a href="fragile.html" class="image">
+										<img src="images/fragile3.jpg" alt="" data-position="top center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Fragile</h3>
+											</header>
+											<p>At The Packers, we understand the delicate nature of your fragile items and the importance of handling them with care. Our specialized packing and unpacking service ensures that your fragile belongings are properly protected throughout the entire moving process. From delicate glassware to valuable artwork, we use high-quality materials and techniques to pack and unpack your fragile items, ensuring their safe transport and placement in your new home. Trust The Packers to handle your fragile items with precision and attention to detail, providing you with peace of mind during your move.</p>
+											<ul class="actions">
+												<li><a href="fragile.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+									</div>
+								</section>
+								<section>
+									<a href="other_packing-unpacking.html" class="image">
+										<img src="images/packing_unpacking.jpg" alt="" data-position="25% 25%" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Others</h3>
+											</header>
+											<p>At The Packers, we understand that moving involves more than just fragile items. That's why we offer comprehensive packing and unpacking services for all your belongings. From furniture and appliances to clothing and everyday items, we ensure that every item is carefully packed and unpacked with the utmost care.</p>
+											<ul class="actions">
+												<li><a href="other_packing-unpacking.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+									</div>
+								</section>
+							</section>
+
+						
+
+				
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="6"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Clear" /></li>
+									</ul>
+								</form>
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="#">information@untitled.tld</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-phone"></span>
+										<h3>Phone</h3>
+										<span>(000) 000-0000 x12387</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-home"></span>
+										<h3>Address</h3>
+										<span>1234 Somewhere Road #5432<br />
+										Nashville, TN 00000<br />
+										United States of America</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

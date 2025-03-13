@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>The packers - Warehouse services</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>The Packers</strong> <span>Your moving partner!</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+<!-- Menu -->
+					<nav id="menu">
+					<ul class="links">
+						<li><a href="index.html">Home</a></li>
+						<li id="profileButton" style="display: none;"><a href="#" onclick="redirectToProfile()">Profile</a></li>
+						<script>
+						function redirectToProfile() {
+							var userId = localStorage.getItem('user_id');
+							if (userId) {
+							window.location.href = "profile.php?user_id=" + userId;
+							}
+						}
+						</script>
+						<li id="ordersButton" style="display: none;"><a href="service_orders.html">Service orders</a></li>
+						<li><a href="contact_us.html">Contact Us</a></li>
+						<li><a href="feedback.html">Feedback</a></li>
+						<li><a href="about_us.html">About Us</a></li>
+						<li id="logoutButton" style="display: none;"><a href="" onclick="onClickedLogout()">Logout</a></li>
+					</ul>
+					<ul class="actions stacked">
+						<li id="getStartedButton"><a href="get_started.html" class="button primary fit">Get Started</a></li>
+						<li id="loginButton"><a href="login.html" class="button fit">Log In</a></li>
+					</ul>						
+				</nav>
+					<script>
+						// Check if the "first_name" key exists in localStorage
+						const firstName = localStorage.getItem("first_name");
+
+						// Hide the buttons if the user is logged in
+						if (firstName) {
+							document.getElementById("getStartedButton").style.display = "none";
+							document.getElementById("loginButton").style.display = "none";
+							document.getElementById("logoutButton").style.display = "";
+							document.getElementById("profileButton").style.display = "";
+							document.getElementById("ordersButton").style.display = "";
+						} else {
+							document.getElementById("logoutButton").style.display = "none"; // Hide the "Logout" button
+							document.getElementById("profileButton").style.display = "none"; // Hide the "Logout" button
+							document.getElementById("ordersButton").style.display = "none"; // Hide the "Logout" button
+						}
+						function onClickedLogout() {
+							localStorage.clear();
+							window.location.href = "index.html";
+						}
+					</script>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Inventory Management</h1>
+									</header>
+									<span class="image main"><img src="images/warehousing.jpg" alt="" /></span>
+									<p>At The Packers, we understand the importance of efficient inventory management for businesses. That's why we offer comprehensive warehousing services that go beyond storage, providing you with robust inventory management solutions. Our goal is to help you streamline your supply chain operations, optimize inventory levels, and improve overall efficiency.
+
+									<p>Our warehousing facilities are equipped with state-of-the-art infrastructure and advanced inventory management systems to ensure accurate tracking and efficient management of your inventory. We provide spacious and well-organized warehouses that can accommodate a wide range of products, from small items to large-scale industrial equipment.
+										
+									<p>With our inventory management service, you gain full visibility and control over your inventory. Our experienced warehouse staff follows strict protocols to accurately receive, record, and organize your inventory. We utilize barcode scanning and digital inventory systems, enabling real-time tracking and updates of your stock levels.
+										
+									<p>Our inventory management service includes regular cycle counts and physical audits to ensure inventory accuracy. We understand that maintaining accurate inventory records is crucial for proper supply chain management and avoiding stockouts or overstock situations. With our meticulous inventory management processes, you can trust that your inventory records will be up to date and reliable.
+										
+									<p>In addition to inventory tracking, we offer value-added services to enhance your inventory management experience. These services include order fulfillment, pick and pack, labeling, kitting, and customized packaging solutions. Our team is skilled in handling various product types and can assist you in efficiently processing orders and preparing shipments.
+										
+									<p>By partnering with The Packers for inventory management, you can free up valuable time and resources that would otherwise be spent on manual inventory tracking and management. This allows you to focus on core business activities and strategic decision-making. Our efficient inventory management service helps reduce costs, minimize stockouts and overstocks, and improve customer satisfaction.
+										
+									<p>Furthermore, our warehousing facilities are equipped with advanced security systems to ensure the safety and security of your inventory. We follow strict protocols to prevent loss, damage, or theft, providing you with peace of mind knowing that your inventory is in safe hands.
+										
+									<p>At The Packers, we are committed to providing excellent customer service and personalized attention to meet your specific inventory management needs. Our team works closely with you to understand your unique requirements and tailor our services accordingly. We strive to build long-term partnerships and become an integral part of your supply chain operations.
+										
+									<p>Contact The Packers today to discuss your inventory management requirements. Let our expert team provide you with comprehensive warehousing solutions that optimize your inventory management, streamline your operations, and contribute to the success of your business.</p>
+								</div>
+							</section>
+							<div class="actions stacked">
+								<a href="delivery.html" class="button primary fit">Book a service now</a>
+							</div>
+					</div>
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="6"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Clear" /></li>
+									</ul>
+								</form>
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="#">information@untitled.tld</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-phone"></span>
+										<h3>Phone</h3>
+										<span>(000) 000-0000 x12387</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-home"></span>
+										<h3>Address</h3>
+										<span>1234 Somewhere Road #5432<br />
+										Nashville, TN 00000<br />
+										United States of America</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

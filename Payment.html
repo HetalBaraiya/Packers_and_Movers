@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The packers - Payment</title>
+	<style>
+		body {
+			background: radial-gradient(50% 123.47% at 50% 50%, #00ff94 0%, #720059 100%),
+			linear-gradient(121.28deg, #669600 0%, #ff0000 100%),
+			linear-gradient(360deg, #0029ff 0%, #8fff00 100%),
+			radial-gradient(100% 164.72% at 100% 100%, #6100ff 0%, #00ff57 100%),
+			radial-gradient(100% 148.07% at 0% 0%, #fff500 0%, #51d500 100%);
+			background-blend-mode: screen, color-dodge, overlay, difference, normal;
+		}
+
+		.container {
+			background-color: #FFFFFF;
+			border-radius: 8px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+			margin: 50px auto;
+			max-width: 600px;
+			padding: 50px;
+		}
+
+		h2 {
+			color: #484848;
+			font-size: 28px;
+			font-weight: normal;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+
+		form {
+			margin: 0 auto;
+			max-width: 400px;
+		}
+
+		label {
+			color: #484848;
+			display: block;
+			font-size: 16px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		input[type="text"],
+		input[type="password"] {
+			border: 1px solid #CCCCCC;
+			border-radius: 4px;
+			box-sizing: border-box;
+			font-size: 16px;
+			padding: 10px;
+			width: 100%;
+		}
+
+		input[type="submit"] {
+			background-color: #007BFF;
+			border: none;
+			border-radius: 4px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+			color: #FFFFFF;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 15px;
+			text-align: center;
+			text-decoration: none;
+			transition: background-color 0.3s ease;
+			width: 100%;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #0069D9;
+		}
+
+		.submit-button-disabled {
+			background-color: #999999;
+			cursor: not-allowed;
+		}
+
+		.error {
+			color: red;
+			font-size: 14px;
+			margin-top: 5px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<h2>Payment Information</h2>
+		<form action="payment.php" method="post">
+			<label for="card_number">Card Number:</label>
+			<input type="text" id="card_number" name="card_number"><span id="card_number_error" class="error"></span><br><br>
+
+			<label for="cvv">CVV:</label>
+			<input type="text" id="cvv" name="cvv"><span id="cvv_error" class="error"></span><br><br>
+			<label for="cardholder_name">Cardholder Name:</label>
+			<input type="text" id="cardholder_name" name="cardholder_name"><span id="cardholder_name_error" class="error"></span><br><br>
+	
+			<label for="expiry_month">Expiry Month:</label>
+			<input type="text" id="expiry_month" name="expiry_month"><span id="expiry_month_error" class="error"></span><br><br>
+	
+			<label for="expiry_year">Expiry Year:</label>
+			<input type="text" id="expiry_year" name="expiry_year"><span id="expiry_year_error" class="error"></span><br><br>
+	
+			<input type="submit" class="submit-button" value="Submit Payment" onclick="onSubmitPressed()" id="submit_button">
+		</form>
+	</div>
+	
+	<script>
+		function onSubmitPressed() {
+			const cardNumber = document.getElementById('card_number').value;
+			const cvv = document.getElementById('cvv').value;
+			const cardholderName = document.getElementById('cardholder_name').value;
+			const expiryMonth = document.getElementById('expiry_month').value;
+			const expiryYear = document.getElementById('expiry_year').value;
+	
+			// Clear previous error messages
+			clearErrorMessages();
+	
+			// Validate card number (16 digits)
+			if (cardNumber.length !== 16 || isNaN(cardNumber)) {
+				showErrorMessage('card_number', 'Please enter a valid 16-digit card number.');
+				return;
+			}
+	
+			// Validate CVV (3 digits)
+			if (cvv.length !== 3 || isNaN(cvv)) {
+				showErrorMessage('cvv', 'Please enter a valid 3-digit CVV.');
+				return;
+			}
+	
+			// Validate cardholder name (not empty)
+			if (cardholderName.trim() === '') {
+				showErrorMessage('cardholder_name', 'Please enter the cardholder name.');
+				return;
+			}
+	
+			// Validate expiry month (future date)
+			const currentMonth = new Date().getMonth() + 1; // Month is zero-based, so add 1
+			if (expiryMonth < currentMonth || isNaN(expiryMonth)) {
+				showErrorMessage('expiry_month', 'Please enter a valid expiry month.');
+				return;
+			}
+	
+			// Validate expiry year (future date)
+			const currentYear = new Date().getFullYear();
+			if (expiryYear < currentYear || isNaN(expiryYear)) {
+				showErrorMessage('expiry_year', 'Please enter a valid expiry year.');
+				return;
+			}
+	
+			// If all validations pass, allow form submission
+			var userId = localStorage.getItem('user_id');
+			if (userId) {
+				window.location.href = "payment.php?user_id=" + userId;
+			}
+		}
+	
+		function showErrorMessage(inputId, errorMessage) {
+			const errorSpan = document.getElementById(`${inputId}_error`);
+			errorSpan.innerText = errorMessage;
+		}
+	
+		function clearErrorMessages() {
+			const errorSpans = document.querySelectorAll('.error');
+			errorSpans.forEach(span => span.innerText = '');
+		}
+	
+		// Enable/disable submit button based on form validity
+		const formInputs = document.querySelectorAll('input[type="text"]');
+		const submitButton = document.getElementById('submit_button');
+	
+		formInputs.forEach(input => {
+			input.addEventListener('input', validateForm);
+		});
+	
+		function validateForm() {
+			let isValid = true;
+	
+			formInputs.forEach(input => {
+				if (input.value.trim() === '') {
+					isValid = false;
+				}
+			});
+	
+			submitButton.disabled = !isValid;
+submitButton.classList.toggle('submit-button-disabled', !isValid);
+}
+</script>
+
+</body>
+</html>	

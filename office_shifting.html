@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>The Packers</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="index.html" class="logo"><strong>The Packers</strong> <span>Your Moving Partner!</span></a>
+						<div class="actions stacked">
+							<a href="delivery.html" class="button primary fit">Hire Us</a>
+						</div>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+<!-- Menu -->
+					<nav id="menu">
+					<ul class="links">
+						<li><a href="index.html">Home</a></li>
+						<li id="profileButton" style="display: none;"><a href="#" onclick="redirectToProfile()">Profile</a></li>
+						<script>
+						function redirectToProfile() {
+							var userId = localStorage.getItem('user_id');
+							if (userId) {
+							window.location.href = "profile.php?user_id=" + userId;
+							}
+						}
+						</script>
+						<li id="ordersButton" style="display: none;"><a href="service_orders.html">Service orders</a></li>
+						<li><a href="contact_us.html">Contact Us</a></li>
+						<li><a href="feedback.html">Feedback</a></li>
+						<li><a href="about_us.html">About Us</a></li>
+						<li id="logoutButton" style="display: none;"><a href="" onclick="onClickedLogout()">Logout</a></li>
+					</ul>
+					<ul class="actions stacked">
+						<li id="getStartedButton"><a href="get_started.html" class="button primary fit">Get Started</a></li>
+						<li id="loginButton"><a href="login.html" class="button fit">Log In</a></li>
+					</ul>						
+				</nav>
+					<script>
+						// Check if the "first_name" key exists in localStorage
+						const firstName = localStorage.getItem("first_name");
+
+						// Hide the buttons if the user is logged in
+						if (firstName) {
+							document.getElementById("getStartedButton").style.display = "none";
+							document.getElementById("loginButton").style.display = "none";
+							document.getElementById("logoutButton").style.display = "";
+							document.getElementById("profileButton").style.display = "";
+							document.getElementById("ordersButton").style.display = "";
+						} else {
+							document.getElementById("logoutButton").style.display = "none"; // Hide the "Logout" button
+							document.getElementById("profileButton").style.display = "none"; // Hide the "Logout" button
+							document.getElementById("ordersButton").style.display = "none"; // Hide the "Logout" button
+						}
+						function onClickedLogout() {
+							localStorage.clear();
+							window.location.href = "index.html";
+						}
+					</script>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="images/office.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h1>Our Services</h1>
+							</header>
+							<div class="content">
+								<p>The Packers work for and provide services to individuals, families, big organizations, and businesses. We offer end-to-end packing and shifting services</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h2>Office Shifting</h2>
+									</header>
+									<p>At The Packers, we understand that office shifting requires careful planning, coordination, and minimal disruption to your business operations. Our office shifting service is designed to make the process smooth and efficient, allowing you to focus on your work while we take care of the logistics.
+
+										Our experienced team specializes in office relocation and understands the unique requirements of moving a business. We work closely with you to develop a customized relocation plan that suits your specific needs and timeline. Whether you're moving locally or across cities, we have the expertise and resources to handle office relocations of all sizes.
+										Upon reaching your new office space, our team will efficiently unload and unpack your items, following your instructions for placement and arrangement. We strive to minimize downtime and disruption to your business operations, allowing you to quickly resume your work in the new office environment.
+
+										In addition to the physical aspects of office shifting, we can also assist with IT infrastructure setup, furniture assembly, and other specialized services. Our goal is to provide a seamless transition for your business, ensuring that all your equipment and resources are up and running as quickly as possible.
+										
+										With The Packers, you can trust that your office shifting will be handled with professionalism and efficiency. We understand the importance of a smooth relocation process for your business, and our experienced team is dedicated to delivering a seamless experience from start to finish.
+										
+										Contact The Packers today to discuss your office shifting requirements and let us take care of your business move. We will work closely with you to ensure a successful and stress-free transition to your new office space.</p>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="spotlights">
+								<section>
+									<a href="arounnd_neighbourhood_office.html" class="image">
+										<img src="images/office_shifting6.jpg" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Around Neighbourhood</h3>
+											</header>
+											<p>At The Packers, we offer professional office shifting services designed specifically for businesses relocating within the neighborhood. We understand the importance of a smooth and efficient transition for your business, and our team is committed to making your office shifting experience hassle-free.</p>
+											<ul class="actions">
+												<li><a href="arounnd_neighbourhood_office.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+									</div>
+								</section>
+								<section>
+									<a href="new_city_office.html" class="image">
+										<img src="images/office_shfting.jpg" alt="" data-position="top center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>New City</h3>
+											</header>
+											<p>At The Packers, we offer professional office shifting services for businesses relocating to a new city. We understand the challenges and complexities involved in moving your office to a different location, and our team is here to make the process smooth and hassle-free.</p>
+											<ul class="actions">
+												<li><a href="new_city_office.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+									</div>
+								</section>
+								<section>
+									<a href="luxurious_office.html" class="image">
+										<img src="images/office_shifting8.jpg" alt="" data-position="25% 25%" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Luxurious</h3>
+											</header>
+											<p>At The Packers, we provide top-notch office shifting services designed specifically for luxurious establishments. We understand that upscale offices require extra care and attention during the shifting process, and our experienced team is dedicated to delivering a seamless and luxurious experience.</p>
+											<ul class="actions">
+												<li><a href="luxurious_office.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+									</div>
+								</section>
+							</section>
+
+						
+					
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="6"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Clear" /></li>
+									</ul>
+								</form>
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="#">information@untitled.tld</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-phone"></span>
+										<h3>Phone</h3>
+										<span>(000) 000-0000 x12387</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-home"></span>
+										<h3>Address</h3>
+										<span>1234 Somewhere Road #5432<br />
+										Nashville, TN 00000<br />
+										United States of America</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
